@@ -23,7 +23,7 @@ class BottomNavigationView extends GetView<BottomNavigationController> {
                           ? AppColor.bottomBarColor
                           : AppColor.primaryColor,
                       padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 41),
+                          vertical: 20, horizontal: 40),
                       child: Column(
                         children: [
                           Icon(controller.icons[e.key],
