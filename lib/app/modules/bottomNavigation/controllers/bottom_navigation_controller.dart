@@ -1,4 +1,5 @@
 import 'package:adely_dispatcher/app/modules/profile/views/profile_view.dart';
+import 'package:adely_dispatcher/app/modules/settings/views/settings_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,11 +13,7 @@ class BottomNavigationController extends GetxController {
       color: Colors.amber,
     ),
     const ProfileView(),
-    Container(
-      height: 500,
-      width: 500,
-      color: Colors.green,
-    ),
+    const SettingsView(),
   ];
   List<IconData> icons = [
     Icons.fact_check_outlined,

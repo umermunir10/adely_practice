@@ -8,6 +8,8 @@ abstract class Routes {
   static const login = _Paths.login;
   static const profile = _Paths.profile;
   static const bottomNavigation = _Paths.bottomNavigation;
+  static const settings = _Paths.settings;
+  static const TRACKING = _Paths.TRACKING;
 }
 
 abstract class _Paths {
@@ -17,4 +19,6 @@ abstract class _Paths {
   static const login = '/login';
   static const profile = '/profile';
   static const bottomNavigation = '/bottom-navigation';
+  static const settings = '/settings';
+  static const TRACKING = '/tracking';
 }

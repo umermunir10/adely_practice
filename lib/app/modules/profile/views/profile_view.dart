@@ -1,5 +1,6 @@
 import 'package:adely_dispatcher/app/data/configs/app_theme.dart';
 import 'package:adely_dispatcher/app/data/utils/static_assets.dart';
+import 'package:adely_dispatcher/app/modules/profile/views/widgets/row_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -78,28 +79,33 @@ class ProfileView extends GetView<ProfileController> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 40,
+            Padding(
+              padding: const EdgeInsets.only(right: 25, top: 25),
+              child: Align(
+                  alignment: Alignment.topRight,
+                  child: SvgPicture.asset(StaticAssets.pen)),
             ),
+            const Padding(
+                padding: EdgeInsets.only(left: 40), child: RowWidget()),
             Padding(
               padding: const EdgeInsets.only(left: 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(
-                    height: 120,
+                    height: 20,
                   ),
                   Row(
                     children: [
                       SvgPicture.asset(
-                        StaticAssets.mail,
-                        height: 18,
+                        StaticAssets.phone,
+                        height: 20,
                       ),
                       const SizedBox(
-                        width: 15,
+                        width: 20,
                       ),
                       const Text(
-                        'ID',
+                        'Phone',
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       )
                     ],
@@ -109,40 +115,6 @@ class ProfileView extends GetView<ProfileController> {
                   ),
                   const Padding(
                     padding: EdgeInsets.only(left: 40),
-                    child: Text(
-                      'Dispatcher@adely.com',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.mail),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        'Phone',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 40),
                     child: Text('+32451632541',
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold)),
@@ -150,30 +122,33 @@ class ProfileView extends GetView<ProfileController> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 40),
+            Padding(
+              padding: const EdgeInsets.only(left: 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
                     children: [
-                      Icon(Icons.mail),
-                      SizedBox(
-                        width: 15,
+                      SvgPicture.asset(
+                        StaticAssets.lock,
+                        height: 22,
                       ),
-                      Text(
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      const Text(
                         'Password',
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(left: 40),
                     child: Text('************',
                         style: TextStyle(
@@ -182,30 +157,33 @@ class ProfileView extends GetView<ProfileController> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 40),
+            Padding(
+              padding: const EdgeInsets.only(left: 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
                     children: [
-                      Icon(Icons.mail),
-                      SizedBox(
+                      SvgPicture.asset(
+                        StaticAssets.site,
+                        height: 25,
+                      ),
+                      const SizedBox(
                         width: 15,
                       ),
-                      Text(
+                      const Text(
                         'Company Name',
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(left: 40),
                     child: Text('Example Limited',
                         style: TextStyle(
@@ -214,30 +192,33 @@ class ProfileView extends GetView<ProfileController> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 40),
+            Padding(
+              padding: const EdgeInsets.only(left: 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
                     children: [
-                      Icon(Icons.mail),
-                      SizedBox(
+                      SvgPicture.asset(
+                        StaticAssets.person,
+                        height: 25,
+                      ),
+                      const SizedBox(
                         width: 15,
                       ),
-                      Text(
+                      const Text(
                         'Role',
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(left: 40),
                     child: Text('Dispatcher',
                         style: TextStyle(
@@ -246,30 +227,33 @@ class ProfileView extends GetView<ProfileController> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 40),
+            Padding(
+              padding: const EdgeInsets.only(left: 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
                     children: [
-                      Icon(Icons.mail),
-                      SizedBox(
+                      SvgPicture.asset(
+                        StaticAssets.location,
+                        height: 25,
+                      ),
+                      const SizedBox(
                         width: 15,
                       ),
-                      Text(
+                      const Text(
                         'Address',
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(left: 40),
                     child: Text('Rue des Mescottes 15, 1080 Ixelles',
                         style: TextStyle(

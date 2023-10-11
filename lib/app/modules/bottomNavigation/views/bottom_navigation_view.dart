@@ -19,21 +19,23 @@ class BottomNavigationView extends GetView<BottomNavigationController> {
                       controller.setIndex(e.key);
                     },
                     child: Container(
-                      color: Colors.grey,
+                      color: e.key != controller.currentIndex.value
+                          ? AppColor.bottomBarColor
+                          : AppColor.primaryColor,
                       padding: const EdgeInsets.symmetric(
                           vertical: 20, horizontal: 41),
                       child: Column(
                         children: [
                           Icon(controller.icons[e.key],
-                              color: controller.currentIndex.value != e.key
-                                  ? Colors.black
-                                  : AppColor.primaryColor),
+                              color: controller.currentIndex.value == e.key
+                                  ? AppColor.secondaryColor
+                                  : AppColor.grey),
                           Text(
                             e.value,
                             style: TextStyle(
-                                color: controller.currentIndex.value != e.key
-                                    ? Colors.black
-                                    : AppColor.primaryColor,
+                                color: controller.currentIndex.value == e.key
+                                    ? AppColor.secondaryColor
+                                    : AppColor.grey,
                                 fontWeight:
                                     controller.currentIndex.value != e.key
                                         ? FontWeight.w300

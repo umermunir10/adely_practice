@@ -19,13 +19,13 @@ class StaticAssets {
   static const String camera = "assets/icons/camera.svg";
 
   // // <-----------------------Settings Screen Icons------------------->
-  // static const String notificationOutlined =
-  //     "assets/icons/notification_outlined.svg";
-  // static const String notification = "assets/icons/bell.svg";
-  // static const String language = "assets/icons/lang.svg";
-  // static const String theme = "assets/icons/theme.svg";
-  // static const String logout = "assets/icons/logout.svg";
-  // static const String elipse = "assets/icons/appbarelipse.png";
+  static const String notificationOutlined =
+      "assets/icons/notification_outlined.svg";
+  static const String notification = "assets/icons/bell.svg";
+  static const String language = "assets/icons/lang.svg";
+  static const String theme = "assets/icons/theme.svg";
+  static const String logout = "assets/icons/logout.svg";
+  static const String elipse = "assets/icons/appbarelipse.svg";
 
   // // <--------------Bottom Navigaiton Bar Icons------------------->
   // static const String profile = "assets/icons/profile.svg";

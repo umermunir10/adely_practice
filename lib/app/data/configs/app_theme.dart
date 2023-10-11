@@ -14,6 +14,7 @@ class AppColor {
   static Color borderdisable = const Color(0xffD4D4D4);
   static Color borderdisableLight = const Color(0xffE0E3E2);
   static Color borderdisableXLight = const Color(0xffE9E9E9);
+  static Color bottomBarColor = const Color(0xffECF0F3);
 
   static Color dividerColor = const Color(0xffCCCCCC);
 
