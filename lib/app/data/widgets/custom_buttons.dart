@@ -1,4 +1,3 @@
-
 import 'package:adely_dispatcher/app/data/configs/app_theme.dart';
 import 'package:adely_dispatcher/app/data/configs/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +19,7 @@ class CustomButton extends StatelessWidget {
       this.borderRadius,
       this.textColor,
       this.isbold = false,
+      this.borderColor,
       this.elevation = 0,
       this.backgroundColor,
       this.borderWidth,
@@ -29,7 +29,7 @@ class CustomButton extends StatelessWidget {
 
   final ButtonVariant? type;
   final VoidCallback? onPressed;
-  final Color? color, textColor, backgroundColor;
+  final Color? color, textColor, backgroundColor, borderColor;
   final String buttonName;
   final double elevation;
   final double? height, width, borderRadius, borderWidth;
@@ -49,7 +49,7 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius ?? 10),
             border: Border.all(
               width: isFilled ? 0 : borderWidth ?? 2,
-              color: color ?? AppColor.secondaryColor,
+              color: borderColor ?? AppColor.secondaryColor,
             ),
             boxShadow: [
               BoxShadow(

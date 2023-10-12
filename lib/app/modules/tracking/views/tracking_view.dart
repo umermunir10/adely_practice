@@ -2,11 +2,9 @@ import 'package:adely_dispatcher/app/data/configs/app_theme.dart';
 import 'package:adely_dispatcher/app/data/utils/static_assets.dart';
 import 'package:adely_dispatcher/app/data/widgets/custom_buttons.dart';
 import 'package:adely_dispatcher/app/data/widgets/custom_text_feild.dart';
+import 'package:adely_dispatcher/app/modules/tracking/views/widgets/tracking_row.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/tracking_controller.dart';
 
 class TrackingView extends GetView<TrackingController> {
@@ -14,6 +12,7 @@ class TrackingView extends GetView<TrackingController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: AppColor.scaffolColor,
         appBar: PreferredSize(
           preferredSize: const Size(double.infinity, 500),
           child: Stack(
@@ -71,26 +70,46 @@ class TrackingView extends GetView<TrackingController> {
                     )),
               ]),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const CustomButton(
-                buttonName: 'Received Batches',
-                type: ButtonVariant.filled,
-                height: 40,
-                width: 165,
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const CustomButton(
+                    buttonName: 'Received Batches',
+                    type: ButtonVariant.filled,
+                    height: 40,
+                    width: 165,
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  CustomButton(
+                    buttonName: 'Received Batches',
+                    type: ButtonVariant.filled,
+                    color: AppColor.lightGrey,
+                    height: 40,
+                    width: 165,
+                  ),
+                ],
               ),
-              CustomButton(
-                buttonName: 'Received Batches',
-                type: ButtonVariant.filled,
-                color: AppColor.lightGrey,
-                height: 40,
-                width: 165,
-              )
-            ],
-          ),
+            ),
+            Expanded(
+              child: ListView.separated(
+                separatorBuilder: (context, index) {
+                  return const SizedBox(
+                    height: 15,
+                  );
+                },
+                itemBuilder: (BuildContext context, int index) {
+                  return const TrackingRow();
+                },
+                itemCount: 10,
+              ),
+            )
+          ],
         ));
   }
 }

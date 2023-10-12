@@ -1,11 +1,15 @@
 import 'package:get/get.dart';
 
+import '../modules/allPackages/bindings/all_packages_binding.dart';
+import '../modules/allPackages/views/all_packages_view.dart';
 import '../modules/bottomNavigation/bindings/bottom_navigation_binding.dart';
 import '../modules/bottomNavigation/views/bottom_navigation_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/packageDetail_1/bindings/package_detail_1_binding.dart';
+import '../modules/packageDetail_1/views/package_detail_1_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
@@ -54,9 +58,19 @@ class AppPages {
       binding: SettingsBinding(),
     ),
     GetPage(
-      name: _Paths.TRACKING,
+      name: _Paths.tracking,
       page: () => const TrackingView(),
       binding: TrackingBinding(),
+    ),
+    GetPage(
+      name: _Paths.allpackages,
+      page: () => const AllPackagesView(),
+      binding: AllPackagesBinding(),
+    ),
+    GetPage(
+      name: _Paths.packageDetail1,
+      page: () => const PackageDetail1View(),
+      binding: PackageDetail1Binding(),
     ),
   ];
 }

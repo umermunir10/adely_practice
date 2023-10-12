@@ -24,7 +24,7 @@ class ThemeChanger extends StatelessWidget {
           const Spacer(),
           Padding(
             padding: const EdgeInsets.only(right: 30),
-            child: Switch(
+            child: Switch.adaptive(
               value: isChanged,
               onChanged: (value) => isChanged,
             ),

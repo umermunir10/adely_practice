@@ -9,7 +9,9 @@ abstract class Routes {
   static const profile = _Paths.profile;
   static const bottomNavigation = _Paths.bottomNavigation;
   static const settings = _Paths.settings;
-  static const TRACKING = _Paths.TRACKING;
+  static const tracking = _Paths.tracking;
+  static const allpackages = _Paths.allpackages;
+  static const packageDetail1 = _Paths.packageDetail1;
 }
 
 abstract class _Paths {
@@ -20,5 +22,7 @@ abstract class _Paths {
   static const profile = '/profile';
   static const bottomNavigation = '/bottom-navigation';
   static const settings = '/settings';
-  static const TRACKING = '/tracking';
+  static const tracking = '/tracking';
+  static const allpackages = '/all-packages';
+  static const packageDetail1 = '/package-detail-1';
 }

@@ -32,9 +32,9 @@ class StaticAssets {
   // static const String tracking = "assets/icons/profile_icon.svg";
   // static const String setting = "assets/icons/setting.svg";
 
-  // // <--------------Batch Tracking Icons------------------->
-  // static const String arrowForward = "assets/icons/arrowf.svg";
-  // static const String search = "assets/icons/searchIcon.svg";
+  // <--------------Batch Tracking Icons------------------->
+  static const String arrowForward = "assets/icons/arrowf.svg";
+  static const String search = "assets/icons/searchIcon.svg";
 
   // // <--------------Batch ProductDetail Icons------------------->
   // static const String arrowBack = "assets/icons/arrowBack.svg";
