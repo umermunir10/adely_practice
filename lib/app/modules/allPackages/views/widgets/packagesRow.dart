@@ -43,7 +43,7 @@ class PackagesRow extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      name ?? 'Apple Watch Series 8',
+                      name ?? '',
                       style: CustomTextStyle.font16RB,
                     ),
                     const SizedBox(

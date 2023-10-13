@@ -3,7 +3,9 @@ import 'package:adely_dispatcher/app/data/configs/text_styles.dart';
 import 'package:adely_dispatcher/app/data/utils/static_assets.dart';
 import 'package:adely_dispatcher/app/data/widgets/custom_text_feild.dart';
 import 'package:adely_dispatcher/app/modules/allPackages/views/widgets/packagesRow.dart';
+import 'package:adely_dispatcher/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../controllers/all_packages_controller.dart';
 
@@ -25,24 +27,28 @@ class AllPackagesView extends GetView<AllPackagesController> {
               height: 193,
               fit: BoxFit.fitWidth,
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                    size: 30,
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(Routes.tracking);
+                    },
+                    child: SvgPicture.asset(
+                      StaticAssets.elipse,
+                      height: 20,
+                    ),
                   ),
-                  Text(
+                  const Text(
                     'Adely',
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 22),
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: CircleAvatar(
                       backgroundColor: Colors.white,

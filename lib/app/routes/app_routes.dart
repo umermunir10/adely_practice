@@ -12,6 +12,10 @@ abstract class Routes {
   static const tracking = _Paths.tracking;
   static const allpackages = _Paths.allpackages;
   static const packageDetail1 = _Paths.packageDetail1;
+  static const packageDetail2 = _Paths.packageDetail2;
+  static const packageDetail3 = _Paths.packageDetail3;
+  static const createBatch = _Paths.createBatch;
+  static const createBatch2 = _Paths.createBatch2;
 }
 
 abstract class _Paths {
@@ -25,4 +29,8 @@ abstract class _Paths {
   static const tracking = '/tracking';
   static const allpackages = '/all-packages';
   static const packageDetail1 = '/package-detail-1';
+  static const packageDetail2 = '/package-detail-2';
+  static const packageDetail3 = '/package-detail3';
+  static const createBatch = '/create-batch';
+  static const createBatch2 = '/create-batch2';
 }

@@ -36,14 +36,14 @@ class StaticAssets {
   static const String arrowForward = "assets/icons/arrowf.svg";
   static const String search = "assets/icons/searchIcon.svg";
 
-  // // <--------------Batch ProductDetail Icons------------------->
-  // static const String arrowBack = "assets/icons/arrowBack.svg";
-  // static const String arrowUp = "assets/icons/arrowUp.svg";
-  // static const String arrowDown = "assets/icons/arrowDown.svg";
-  // static const String add = "assets/icons/add.svg";
-  // static const String arrowF = "assets/icons/arrowForward.svg";
-  // static const String route = "assets/icons/route.svg";
-  // static const String tick = "assets/icons/tick.svg";
-  // static const String edit = "assets/icons/edit.svg";
-  // static const String delete = "assets/icons/delete.svg";
+  // <--------------Batch ProductDetail Icons------------------->
+  static const String arrowBack = "assets/icons/arrowBack.svg";
+  static const String arrowUp = "assets/icons/arrowUp.svg";
+  static const String arrowDown = "assets/icons/arrowDown.svg";
+  static const String add = "assets/icons/add.svg";
+  static const String arrowF = "assets/icons/arrowForward.svg";
+  static const String route = "assets/icons/route.svg";
+  static const String tick = "assets/icons/tick.svg";
+  static const String edit = "assets/icons/edit.svg";
+  static const String delete = "assets/icons/delete.svg";
 }
