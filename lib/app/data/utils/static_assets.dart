@@ -46,4 +46,5 @@ class StaticAssets {
   static const String tick = "assets/icons/tick.svg";
   static const String edit = "assets/icons/edit.svg";
   static const String delete = "assets/icons/delete.svg";
+  static const String arrowNext = "assets/icons/arrowForward.svg";
 }

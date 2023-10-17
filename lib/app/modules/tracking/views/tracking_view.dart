@@ -26,31 +26,26 @@ class TrackingView extends GetView<TrackingController> {
                   height: 193,
                   fit: BoxFit.fitWidth,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
+                const Padding(
+                  padding: EdgeInsets.only(
                     left: 20,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      InkWell(
-                        onTap: () {
-                          Get.toNamed(Routes.createBatch);
-                        },
-                        child: const Icon(
-                          Icons.menu,
-                          color: Colors.white,
-                          size: 30,
-                        ),
+                      Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                        size: 30,
                       ),
-                      const Text(
+                      Text(
                         'Batches',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 22),
                       ),
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.only(right: 10),
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
@@ -94,6 +89,9 @@ class TrackingView extends GetView<TrackingController> {
                   ),
                   CustomButton(
                     buttonName: 'Received Batches',
+                    onPressed: () {
+                      Get.toNamed(Routes.createBatch);
+                    },
                     type: ButtonVariant.filled,
                     color: AppColor.lightGrey,
                     height: 40,

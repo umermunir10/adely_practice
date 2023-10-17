@@ -2,9 +2,7 @@ import 'package:adely_dispatcher/app/data/utils/static_assets.dart';
 import 'package:adely_dispatcher/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/create_batch_controller.dart';
 
 class CreateBatchView extends GetView<CreateBatchController> {
@@ -29,9 +27,14 @@ class CreateBatchView extends GetView<CreateBatchController> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SvgPicture.asset(
-                        StaticAssets.elipse,
-                        height: 20,
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(Routes.tracking);
+                        },
+                        child: SvgPicture.asset(
+                          StaticAssets.elipse,
+                          height: 20,
+                        ),
                       ),
                       const Text(
                         'Create Batch',

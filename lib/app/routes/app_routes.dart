@@ -16,6 +16,12 @@ abstract class Routes {
   static const packageDetail3 = _Paths.packageDetail3;
   static const createBatch = _Paths.createBatch;
   static const createBatch2 = _Paths.createBatch2;
+  static const createBatch3 = _Paths.createBatch3;
+  static const createBatch4 = _Paths.createBatch4;
+  static const batchToDispatch = _Paths.batchToDispatch;
+  static const assignedDriver = _Paths.assignedDriver;
+  static const assignedDriver2 = _Paths.assignedDriver2;
+  static const package1 = _Paths.package1;
 }
 
 abstract class _Paths {
@@ -33,4 +39,10 @@ abstract class _Paths {
   static const packageDetail3 = '/package-detail3';
   static const createBatch = '/create-batch';
   static const createBatch2 = '/create-batch2';
+  static const createBatch3 = '/create-batch3';
+  static const createBatch4 = '/create-batch4';
+  static const batchToDispatch = '/batch-to-dispatch';
+  static const assignedDriver = '/assigned-driver';
+  static const assignedDriver2 = '/assigned-driver2';
+  static const package1 = '/package1';
 }
