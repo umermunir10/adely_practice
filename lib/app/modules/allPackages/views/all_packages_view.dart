@@ -34,7 +34,7 @@ class AllPackagesView extends GetView<AllPackagesController> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.toNamed(Routes.tracking);
+                      Get.toNamed(Routes.bottomNavigation);
                     },
                     child: SvgPicture.asset(
                       StaticAssets.elipse,
@@ -100,6 +100,7 @@ class AllPackagesView extends GetView<AllPackagesController> {
           )
         ],
       ),
+      // bottomNavigationBar: const BottomNavigationView(),
     );
   }
 }

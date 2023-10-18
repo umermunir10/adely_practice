@@ -84,48 +84,58 @@ class PackageDetail3View extends GetView<PackageDetail3Controller> {
                 )
               ],
             ),
-            Container(
-              height: 60,
-              width: 365,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 25),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Package Information',
-                      style: CustomTextStyle.font16R,
-                    ),
-                    SvgPicture.asset(StaticAssets.arrowDown)
-                  ],
+            InkWell(
+              onTap: () {
+                Get.toNamed(Routes.packageDetail1);
+              },
+              child: Container(
+                height: 60,
+                width: 365,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 25),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Package Information',
+                        style: CustomTextStyle.font16R,
+                      ),
+                      SvgPicture.asset(StaticAssets.arrowDown)
+                    ],
+                  ),
                 ),
               ),
             ),
             const SizedBox(
               height: 15,
             ),
-            Container(
-              height: 60,
-              width: 365,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 25),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Cunsumer details',
-                      style: CustomTextStyle.font16R,
-                    ),
-                    SvgPicture.asset(StaticAssets.arrowDown)
-                  ],
+            InkWell(
+              onTap: () {
+                Get.toNamed(Routes.packageDetail2);
+              },
+              child: Container(
+                height: 60,
+                width: 365,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 25),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Cunsumer details',
+                        style: CustomTextStyle.font16R,
+                      ),
+                      SvgPicture.asset(StaticAssets.arrowDown)
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -454,6 +464,9 @@ class PackageDetail3View extends GetView<PackageDetail3Controller> {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 30,
+            )
           ],
         ),
       ),

@@ -69,7 +69,10 @@ class PackageDetail2View extends GetView<PackageDetail2Controller> {
                       Container(
                         height: 100,
                         width: 100,
-                        color: Colors.blueGrey,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.black,
+                        ),
                       ),
                       Container(
                         margin: const EdgeInsets.only(left: 20),
@@ -91,24 +94,29 @@ class PackageDetail2View extends GetView<PackageDetail2Controller> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  Container(
-                    height: 60,
-                    width: 365,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15, right: 25),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Package Information',
-                            style: CustomTextStyle.font16R,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowDown)
-                        ],
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(Routes.packageDetail1);
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 365,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15, right: 25),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Package Information',
+                              style: CustomTextStyle.font16R,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowDown)
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -321,27 +329,35 @@ class PackageDetail2View extends GetView<PackageDetail2Controller> {
                   const SizedBox(
                     height: 12,
                   ),
-                  Container(
-                    height: 60,
-                    width: 365,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15, right: 25),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Home delivery setting',
-                            style: CustomTextStyle.font16R,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowDown)
-                        ],
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(Routes.packageDetail3);
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 365,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15, right: 25),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Home delivery setting',
+                              style: CustomTextStyle.font16R,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowDown)
+                          ],
+                        ),
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 30,
+                  )
                 ],
               ),
             ),

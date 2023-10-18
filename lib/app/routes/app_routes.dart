@@ -22,6 +22,9 @@ abstract class Routes {
   static const assignedDriver = _Paths.assignedDriver;
   static const assignedDriver2 = _Paths.assignedDriver2;
   static const package1 = _Paths.package1;
+  static const package2 = _Paths.package2;
+  static const package3 = _Paths.package3;
+  static const package4 = _Paths.package4;
 }
 
 abstract class _Paths {
@@ -45,4 +48,7 @@ abstract class _Paths {
   static const assignedDriver = '/assigned-driver';
   static const assignedDriver2 = '/assigned-driver2';
   static const package1 = '/package1';
+  static const package2 = '/package2';
+  static const package3 = '/package3';
+  static const package4 = '/package4';
 }

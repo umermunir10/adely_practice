@@ -29,7 +29,7 @@ class CreateBatchView extends GetView<CreateBatchController> {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.toNamed(Routes.tracking);
+                          Get.toNamed(Routes.bottomNavigation);
                         },
                         child: SvgPicture.asset(
                           StaticAssets.elipse,

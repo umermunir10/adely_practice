@@ -88,7 +88,7 @@ class TrackingView extends GetView<TrackingController> {
                     width: 20,
                   ),
                   CustomButton(
-                    buttonName: 'Received Batches',
+                    buttonName: 'Batches to Dispatch',
                     onPressed: () {
                       Get.toNamed(Routes.createBatch);
                     },
@@ -112,6 +112,9 @@ class TrackingView extends GetView<TrackingController> {
                 },
                 itemCount: 10,
               ),
+            ),
+            const SizedBox(
+              height: 20,
             )
           ],
         ));
