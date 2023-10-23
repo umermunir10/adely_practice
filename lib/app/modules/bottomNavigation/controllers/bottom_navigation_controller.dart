@@ -8,7 +8,7 @@ class BottomNavigationController extends GetxController {
   RxInt currentIndex = 1.obs;
   List<String> navTitle = ['Tracking', 'Profile', 'Setting'];
   List<Widget> views = [
-    const TrackingView(),
+    TrackingView(),
     const ProfileView(),
     const SettingsView(),
   ];

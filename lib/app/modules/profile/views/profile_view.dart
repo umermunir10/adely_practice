@@ -3,9 +3,7 @@ import 'package:adely_dispatcher/app/data/utils/static_assets.dart';
 import 'package:adely_dispatcher/app/modules/profile/views/widgets/row_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
@@ -76,194 +74,206 @@ class ProfileView extends GetView<ProfileController> {
             ]),
       ),
       backgroundColor: AppColor.scaffolColor,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 25, top: 25),
-              child: Align(
-                  alignment: Alignment.topRight,
-                  child: SvgPicture.asset(StaticAssets.pen)),
-            ),
-            const Padding(
-                padding: EdgeInsets.only(left: 40), child: RowWidget()),
-            Padding(
-              padding: const EdgeInsets.only(left: 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
+      body: Stack(
+        children: [
+          Container(
+            height: Get.height * 0.1,
+            color: AppColor.appGreen,
+          ),
+          Container(
+            height: Get.height * 0.2,
+            color: Colors.greenAccent,
+          ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 25, top: 25),
+                  child: Align(
+                      alignment: Alignment.topRight,
+                      child: SvgPicture.asset(StaticAssets.pen)),
+                ),
+                const Padding(
+                    padding: EdgeInsets.only(left: 40), child: RowWidget()),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SvgPicture.asset(
-                        StaticAssets.phone,
+                      const SizedBox(
                         height: 20,
                       ),
-                      const SizedBox(
-                        width: 20,
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            StaticAssets.phone,
+                            height: 20,
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          const Text(
+                            'Phone',
+                            style: TextStyle(fontSize: 16, color: Colors.grey),
+                          )
+                        ],
                       ),
-                      const Text(
-                        'Phone',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
-                      )
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 40),
+                        child: Text('+32451632541',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold)),
+                      ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 40),
-                    child: Text('+32451632541',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SvgPicture.asset(
-                        StaticAssets.lock,
-                        height: 22,
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            StaticAssets.lock,
+                            height: 22,
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          const Text(
+                            'Password',
+                            style: TextStyle(fontSize: 16, color: Colors.grey),
+                          )
+                        ],
                       ),
                       const SizedBox(
-                        width: 20,
+                        height: 10,
                       ),
-                      const Text(
-                        'Password',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 40),
+                        child: Text('************',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold)),
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 40),
-                    child: Text('************',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SvgPicture.asset(
-                        StaticAssets.site,
-                        height: 25,
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            StaticAssets.site,
+                            height: 25,
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          const Text(
+                            'Company Name',
+                            style: TextStyle(fontSize: 16, color: Colors.grey),
+                          )
+                        ],
                       ),
                       const SizedBox(
-                        width: 15,
+                        height: 10,
                       ),
-                      const Text(
-                        'Company Name',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 40),
+                        child: Text('Example Limited',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold)),
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 40),
-                    child: Text('Example Limited',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SvgPicture.asset(
-                        StaticAssets.person,
-                        height: 25,
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            StaticAssets.person,
+                            height: 25,
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          const Text(
+                            'Role',
+                            style: TextStyle(fontSize: 16, color: Colors.grey),
+                          )
+                        ],
                       ),
                       const SizedBox(
-                        width: 15,
+                        height: 10,
                       ),
-                      const Text(
-                        'Role',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 40),
+                        child: Text('Dispatcher',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold)),
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 40),
-                    child: Text('Dispatcher',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SvgPicture.asset(
-                        StaticAssets.location,
-                        height: 25,
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            StaticAssets.location,
+                            height: 25,
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          const Text(
+                            'Address',
+                            style: TextStyle(fontSize: 16, color: Colors.grey),
+                          )
+                        ],
                       ),
                       const SizedBox(
-                        width: 15,
+                        height: 10,
                       ),
-                      const Text(
-                        'Address',
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 40),
+                        child: Text('Rue des Mescottes 15, 1080 Ixelles',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold)),
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 40),
-                    child: Text('Rue des Mescottes 15, 1080 Ixelles',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                  )
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

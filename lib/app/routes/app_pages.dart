@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../modules/allPackages/bindings/all_packages_binding.dart';
 import '../modules/allPackages/views/all_packages_view.dart';
 import '../modules/assignedDriver/bindings/assigned_driver_binding.dart';
@@ -24,18 +23,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/package1/bindings/package1_binding.dart';
 import '../modules/package1/views/package1_view.dart';
-import '../modules/package2/bindings/package2_binding.dart';
-import '../modules/package2/views/package2_view.dart';
-import '../modules/package3/bindings/package3_binding.dart';
-import '../modules/package3/views/package3_view.dart';
-import '../modules/package4/bindings/package4_binding.dart';
-import '../modules/package4/views/package4_view.dart';
-import '../modules/packageDetail3/bindings/package_detail3_binding.dart';
-import '../modules/packageDetail3/views/package_detail3_view.dart';
 import '../modules/packageDetail_1/bindings/package_detail_1_binding.dart';
 import '../modules/packageDetail_1/views/package_detail_1_view.dart';
-import '../modules/package_detail_2/bindings/package_detail_2_binding.dart';
-import '../modules/package_detail_2/views/package_detail_2_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
@@ -44,7 +33,6 @@ import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/tracking/bindings/tracking_binding.dart';
 import '../modules/tracking/views/tracking_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {
@@ -85,7 +73,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.tracking,
-      page: () => const TrackingView(),
+      page: () => TrackingView(),
       binding: TrackingBinding(),
     ),
     GetPage(
@@ -97,16 +85,6 @@ class AppPages {
       name: _Paths.packageDetail1,
       page: () => const PackageDetail1View(),
       binding: PackageDetail1Binding(),
-    ),
-    GetPage(
-      name: _Paths.packageDetail2,
-      page: () => const PackageDetail2View(),
-      binding: PackageDetail2Binding(),
-    ),
-    GetPage(
-      name: _Paths.packageDetail3,
-      page: () => const PackageDetail3View(),
-      binding: PackageDetail3Binding(),
     ),
     GetPage(
       name: _Paths.createBatch,
@@ -147,21 +125,6 @@ class AppPages {
       name: _Paths.package1,
       page: () => const Package1View(),
       binding: Package1Binding(),
-    ),
-    GetPage(
-      name: _Paths.package2,
-      page: () => const Package2View(),
-      binding: Package2Binding(),
-    ),
-    GetPage(
-      name: _Paths.package3,
-      page: () => const Package3View(),
-      binding: Package3Binding(),
-    ),
-    GetPage(
-      name: _Paths.package4,
-      page: () => const Package4View(),
-      binding: Package4Binding(),
     ),
   ];
 }

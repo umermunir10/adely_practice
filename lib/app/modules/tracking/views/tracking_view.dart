@@ -10,10 +10,36 @@ import '../controllers/tracking_controller.dart';
 
 class TrackingView extends GetView<TrackingController> {
   const TrackingView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColor.scaffolColor,
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey,
+                ),
+                child: Text('Drawer Header'),
+              ),
+              ListTile(
+                title: const Text('Item 1'),
+                onTap: () {
+                  // Handle item 1 tap
+                },
+              ),
+              ListTile(
+                title: const Text('Item 2'),
+                onTap: () {
+                  // Handle item 2 tap
+                },
+              ),
+            ],
+          ),
+        ),
         appBar: PreferredSize(
           preferredSize: const Size(double.infinity, 500),
           child: Stack(
@@ -26,26 +52,33 @@ class TrackingView extends GetView<TrackingController> {
                   height: 193,
                   fit: BoxFit.fitWidth,
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(
+                Padding(
+                  padding: const EdgeInsets.only(
                     left: 20,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.menu,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                      Text(
+                      Builder(builder: (context) {
+                        return InkWell(
+                          onTap: () {
+                            Scaffold.of(context).openDrawer();
+                          },
+                          child: const Icon(
+                            Icons.menu,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        );
+                      }),
+                      const Text(
                         'Batches',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 22),
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(right: 10),
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
