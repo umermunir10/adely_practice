@@ -25,6 +25,7 @@ abstract class Routes {
   static const package2 = _Paths.package2;
   static const package3 = _Paths.package3;
   static const package4 = _Paths.package4;
+  static const editProfile = _Paths.editProfile;
 }
 
 abstract class _Paths {
@@ -51,4 +52,5 @@ abstract class _Paths {
   static const package2 = '/package2';
   static const package3 = '/package3';
   static const package4 = '/package4';
+  static const editProfile = '/edit-profile';
 }

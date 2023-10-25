@@ -4,6 +4,7 @@ class StaticAssets {
   static const String bottomSplash = "assets/images/splashBottom.png";
   static const String topLogo = "assets/images/top_logo.png";
   static const String appBar = "assets/images/appbar.png";
+  static const String editProfilebg = "assets/images/editProfilebg.png";
 
   // <-------------------ProfileScreenIcons------------------------>
   static const String appBarBg = "assets/icons/appbar.png";
@@ -47,4 +48,5 @@ class StaticAssets {
   static const String edit = "assets/icons/edit.svg";
   static const String delete = "assets/icons/delete.svg";
   static const String arrowNext = "assets/icons/arrowForward.svg";
+  static const String stock = "assets/icons/stock.svg";
 }

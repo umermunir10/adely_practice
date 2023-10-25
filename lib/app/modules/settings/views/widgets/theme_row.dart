@@ -1,9 +1,10 @@
 import 'package:adely_dispatcher/app/data/utils/static_assets.dart';
+import 'package:adely_dispatcher/app/modules/settings/controllers/settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class ThemeChanger extends StatelessWidget {
+class ThemeChanger extends GetView<SettingsController> {
   final bool isChanged = true;
   final String? leading, title, menu;
   const ThemeChanger({super.key, this.leading, this.title, this.menu});
@@ -25,11 +26,10 @@ class ThemeChanger extends StatelessWidget {
           const Spacer(),
           Padding(
             padding: const EdgeInsets.only(right: 30),
-            child: Switch.adaptive(
-              value: isChanged,
-              onChanged: (value) => Get.changeTheme(
-                  Get.isDarkMode ? ThemeData.light() : ThemeData.dark()),
-            ),
+            child: Obx(() => Switch.adaptive(
+                  value: controller.isDarkMode.value,
+                  onChanged: (value) => (controller.isDarkMode.toggle()),
+                )),
           )
         ],
       ),

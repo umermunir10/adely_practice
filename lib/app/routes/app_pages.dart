@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import '../modules/allPackages/bindings/all_packages_binding.dart';
 import '../modules/allPackages/views/all_packages_view.dart';
 import '../modules/assignedDriver/bindings/assigned_driver_binding.dart';
@@ -17,6 +18,8 @@ import '../modules/createBatch3/bindings/create_batch3_binding.dart';
 import '../modules/createBatch3/views/create_batch3_view.dart';
 import '../modules/createBatch4/bindings/create_batch4_binding.dart';
 import '../modules/createBatch4/views/create_batch4_view.dart';
+import '../modules/editProfile/bindings/edit_profile_binding.dart';
+import '../modules/editProfile/views/edit_profile_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -33,6 +36,7 @@ import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/tracking/bindings/tracking_binding.dart';
 import '../modules/tracking/views/tracking_view.dart';
+
 part 'app_routes.dart';
 
 class AppPages {
@@ -73,7 +77,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.tracking,
-      page: () => TrackingView(),
+      page: () => const TrackingView(),
       binding: TrackingBinding(),
     ),
     GetPage(
@@ -125,6 +129,11 @@ class AppPages {
       name: _Paths.package1,
       page: () => const Package1View(),
       binding: Package1Binding(),
+    ),
+    GetPage(
+      name: _Paths.editProfile,
+      page: () => const EditProfileView(),
+      binding: EditProfileBinding(),
     ),
   ];
 }

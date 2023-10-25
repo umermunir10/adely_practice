@@ -35,7 +35,6 @@ class SettingsView extends GetView<SettingsController> {
                 )
               ]),
         ),
-        backgroundColor: AppColor.scaffolColor,
         body: const Column(
           children: [
             SettingsRowWidget(

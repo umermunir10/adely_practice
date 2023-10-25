@@ -1,5 +1,6 @@
 import 'package:adely_dispatcher/app/data/configs/app_theme.dart';
 import 'package:adely_dispatcher/app/data/utils/static_assets.dart';
+import 'package:adely_dispatcher/app/modules/editProfile/views/edit_profile_view.dart';
 import 'package:adely_dispatcher/app/modules/profile/views/widgets/row_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -76,23 +77,10 @@ class ProfileView extends GetView<ProfileController> {
       backgroundColor: AppColor.scaffolColor,
       body: Stack(
         children: [
-          Container(
-            height: Get.height * 0.1,
-            color: AppColor.appGreen,
-          ),
-          Container(
-            height: Get.height * 0.2,
-            color: Colors.greenAccent,
-          ),
           SingleChildScrollView(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 25, top: 25),
-                  child: Align(
-                      alignment: Alignment.topRight,
-                      child: SvgPicture.asset(StaticAssets.pen)),
-                ),
+                const SizedBox(height: 60),
                 const Padding(
                     padding: EdgeInsets.only(left: 40), child: RowWidget()),
                 Padding(
@@ -272,6 +260,36 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ],
             ),
+          ),
+          Column(
+            children: [
+              Container(
+                height: Get.height * 0.16,
+                color: AppColor.scaffolColor,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 25, top: 25),
+                  child: Align(
+                      alignment: Alignment.topRight,
+                      child: InkWell(
+                          onTap: () {
+                            Get.to(const EditProfileView());
+                          },
+                          child: SvgPicture.asset(StaticAssets.pen))),
+                ),
+              ),
+              Container(
+                height: Get.height * 0.06,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                      AppColor.scaffolColor,
+                      AppColor.scaffolColor.withOpacity(0.1)
+                    ])),
+              ),
+              const SizedBox(height: 30)
+            ],
           ),
         ],
       ),
