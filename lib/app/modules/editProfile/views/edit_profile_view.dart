@@ -3,7 +3,6 @@ import 'package:adely_dispatcher/app/data/configs/text_styles.dart';
 import 'package:adely_dispatcher/app/data/utils/static_assets.dart';
 import 'package:adely_dispatcher/app/data/widgets/custom_buttons.dart';
 import 'package:adely_dispatcher/app/data/widgets/custom_text_feild.dart';
-import 'package:adely_dispatcher/app/modules/profile/views/profile_view.dart';
 import 'package:adely_dispatcher/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -290,7 +289,6 @@ class EditProfileView extends GetView<EditProfileController> {
           ],
         ),
       ]),
-      //backgroundColor: AppColor.scaffolColor,
     );
   }
 }

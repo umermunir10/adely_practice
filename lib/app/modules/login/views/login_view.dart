@@ -115,6 +115,7 @@ class LoginView extends GetView<LoginController> {
                 width: double.infinity,
                 child: CustomButton(
                   buttonName: 'Login',
+                  isbold: true,
                   type: ButtonVariant.filled,
                   onPressed: () => Get.offNamed(Routes.bottomNavigation),
                 ))),
