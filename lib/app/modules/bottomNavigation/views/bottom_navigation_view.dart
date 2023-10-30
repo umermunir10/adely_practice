@@ -14,34 +14,38 @@ class BottomNavigationView extends GetView<BottomNavigationController> {
         child: Row(
           children: [
             ...controller.navTitle.asMap().entries.map((e) => Obx(
-                  () => InkWell(
-                    onTap: () {
-                      controller.setIndex(e.key);
-                    },
-                    child: Container(
-                      color: e.key != controller.currentIndex.value
-                          ? AppColor.bottomBarColor
-                          : AppColor.primaryColor,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 40),
-                      child: Column(
-                        children: [
-                          Icon(controller.icons[e.key],
-                              color: controller.currentIndex.value == e.key
-                                  ? AppColor.secondaryColor
-                                  : AppColor.grey),
-                          Text(
-                            e.value,
-                            style: TextStyle(
+                  () => Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        controller.setIndex(e.key);
+                      },
+                      child: Container(
+                        color: e.key != controller.currentIndex.value
+                            ? AppColor.bottomBarColor
+                            : AppColor.primaryColor,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(controller.icons[e.key],
                                 color: controller.currentIndex.value == e.key
                                     ? AppColor.secondaryColor
-                                    : AppColor.grey,
-                                fontWeight:
-                                    controller.currentIndex.value != e.key
-                                        ? FontWeight.w300
-                                        : FontWeight.bold),
-                          ),
-                        ],
+                                    : AppColor.grey),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              e.value,
+                              style: TextStyle(
+                                  color: controller.currentIndex.value == e.key
+                                      ? AppColor.secondaryColor
+                                      : AppColor.grey,
+                                  fontWeight:
+                                      controller.currentIndex.value != e.key
+                                          ? FontWeight.w300
+                                          : FontWeight.bold),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

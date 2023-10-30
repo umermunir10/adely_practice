@@ -15,14 +15,14 @@ class BatchToDispatchView extends GetView<BatchToDispatchController> {
     return Scaffold(
         backgroundColor: AppColor.scaffolColor,
         appBar: PreferredSize(
-            preferredSize: const Size(double.infinity, 500),
+            preferredSize: const Size(double.infinity, 100),
             child: Stack(
                 clipBehavior: Clip.none,
                 alignment: Alignment.center,
                 children: [
                   Image.asset(
                     StaticAssets.appBarBg,
-                    width: 400,
+                    width: double.infinity,
                     height: 150,
                     fit: BoxFit.fitWidth,
                   ),
@@ -59,929 +59,886 @@ class BatchToDispatchView extends GetView<BatchToDispatchController> {
                     ),
                   ),
                 ])),
-        body: Column(
-          children: [
-            InkWell(
-              onTap: () {
-                Get.toNamed(Routes.assignedDriver);
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
-                child: Slidable(
-                  endActionPane:
-                      ActionPane(motion: const StretchMotion(), children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appGreen.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.edit),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appRed.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.delete),
-                          )
-                        ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.assignedDriver);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+                  child: Slidable(
+                    endActionPane:
+                        ActionPane(motion: const StretchMotion(), children: [
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appGreen.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.edit),
+                        ),
                       ),
-                    )
-                  ]),
-                  child: Container(
-                    height: 63,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 22,
-                            width: 22,
-                            decoration: BoxDecoration(
-                                color: AppColor.veryLightGrey,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: Text(
-                              '1',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColor.lightGrey),
-                            )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Batch ID#",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "FR-CHR-0464",
-                                style: CustomTextStyle.font16RM,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Received date & time",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text.rich(TextSpan(
-                                  text: '13-03-23',
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appRed.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.delete),
+                        ),
+                      )
+                    ]),
+                    child: Container(
+                      height: 63,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 22,
+                              width: 22,
+                              decoration: BoxDecoration(
+                                  color: AppColor.veryLightGrey,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: Text(
+                                '1',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColor.lightGrey),
+                              )),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Batch ID#",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "FR-CHR-0464",
                                   style: CustomTextStyle.font16RM,
-                                  children: [
-                                    const WidgetSpan(
-                                        child: SizedBox(width: 10)),
-                                    TextSpan(
-                                        text: '04:54 PM',
-                                        style: CustomTextStyle.font14R
-                                            .copyWith(color: AppColor.grey)),
-                                  ]))
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowForward)
-                        ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Received date & time",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text.rich(TextSpan(
+                                    text: '13-03-23',
+                                    style: CustomTextStyle.font16RM,
+                                    children: [
+                                      const WidgetSpan(
+                                          child: SizedBox(width: 10)),
+                                      TextSpan(
+                                          text: '04:54 PM',
+                                          style: CustomTextStyle.font14R
+                                              .copyWith(color: AppColor.grey)),
+                                    ]))
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowForward)
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Get.toNamed(Routes.assignedDriver);
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
-                child: Slidable(
-                  endActionPane:
-                      ActionPane(motion: const StretchMotion(), children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appGreen.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.edit),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appRed.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.delete),
-                          )
-                        ],
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.assignedDriver);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+                  child: Slidable(
+                    endActionPane:
+                        ActionPane(motion: const StretchMotion(), children: [
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appGreen.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.edit),
+                        ),
                       ),
-                    )
-                  ]),
-                  child: Container(
-                    height: 63,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 22,
-                            width: 22,
-                            decoration: BoxDecoration(
-                                color: AppColor.veryLightGrey,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: Text(
-                              '2',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColor.lightGrey),
-                            )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Batch ID#",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "FR-CHR-0464",
-                                style: CustomTextStyle.font16RM,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Received date & time",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text.rich(TextSpan(
-                                  text: '13-03-23',
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appRed.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.delete),
+                        ),
+                      )
+                    ]),
+                    child: Container(
+                      height: 63,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 22,
+                              width: 22,
+                              decoration: BoxDecoration(
+                                  color: AppColor.veryLightGrey,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: Text(
+                                '2',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColor.lightGrey),
+                              )),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Batch ID#",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "FR-CHR-0464",
                                   style: CustomTextStyle.font16RM,
-                                  children: [
-                                    const WidgetSpan(
-                                        child: SizedBox(width: 10)),
-                                    TextSpan(
-                                        text: '04:54 PM',
-                                        style: CustomTextStyle.font14R
-                                            .copyWith(color: AppColor.grey)),
-                                  ]))
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowForward)
-                        ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Received date & time",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text.rich(TextSpan(
+                                    text: '13-03-23',
+                                    style: CustomTextStyle.font16RM,
+                                    children: [
+                                      const WidgetSpan(
+                                          child: SizedBox(width: 10)),
+                                      TextSpan(
+                                          text: '04:54 PM',
+                                          style: CustomTextStyle.font14R
+                                              .copyWith(color: AppColor.grey)),
+                                    ]))
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowForward)
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Get.toNamed(Routes.assignedDriver);
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
-                child: Slidable(
-                  endActionPane:
-                      ActionPane(motion: const StretchMotion(), children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appGreen.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.edit),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appRed.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.delete),
-                          )
-                        ],
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.assignedDriver);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+                  child: Slidable(
+                    endActionPane:
+                        ActionPane(motion: const StretchMotion(), children: [
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appGreen.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.edit),
+                        ),
                       ),
-                    )
-                  ]),
-                  child: Container(
-                    height: 63,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 22,
-                            width: 22,
-                            decoration: BoxDecoration(
-                                color: AppColor.veryLightGrey,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: Text(
-                              '3',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColor.lightGrey),
-                            )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Batch ID#",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "FR-CHR-0464",
-                                style: CustomTextStyle.font16RM,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Received date & time",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text.rich(TextSpan(
-                                  text: '13-03-23',
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appRed.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.delete),
+                        ),
+                      )
+                    ]),
+                    child: Container(
+                      height: 63,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 22,
+                              width: 22,
+                              decoration: BoxDecoration(
+                                  color: AppColor.veryLightGrey,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: Text(
+                                '3',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColor.lightGrey),
+                              )),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Batch ID#",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "FR-CHR-0464",
                                   style: CustomTextStyle.font16RM,
-                                  children: [
-                                    const WidgetSpan(
-                                        child: SizedBox(width: 10)),
-                                    TextSpan(
-                                        text: '04:54 PM',
-                                        style: CustomTextStyle.font14R
-                                            .copyWith(color: AppColor.grey)),
-                                  ]))
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowForward)
-                        ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Received date & time",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text.rich(TextSpan(
+                                    text: '13-03-23',
+                                    style: CustomTextStyle.font16RM,
+                                    children: [
+                                      const WidgetSpan(
+                                          child: SizedBox(width: 10)),
+                                      TextSpan(
+                                          text: '04:54 PM',
+                                          style: CustomTextStyle.font14R
+                                              .copyWith(color: AppColor.grey)),
+                                    ]))
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowForward)
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Get.toNamed(Routes.assignedDriver);
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
-                child: Slidable(
-                  endActionPane:
-                      ActionPane(motion: const StretchMotion(), children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appGreen.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.edit),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appRed.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.delete),
-                          )
-                        ],
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.assignedDriver);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+                  child: Slidable(
+                    endActionPane:
+                        ActionPane(motion: const StretchMotion(), children: [
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appGreen.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.edit),
+                        ),
                       ),
-                    )
-                  ]),
-                  child: Container(
-                    height: 63,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 22,
-                            width: 22,
-                            decoration: BoxDecoration(
-                                color: AppColor.veryLightGrey,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: Text(
-                              '4',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColor.lightGrey),
-                            )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Batch ID#",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "FR-CHR-0464",
-                                style: CustomTextStyle.font16RM,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Received date & time",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text.rich(TextSpan(
-                                  text: '13-03-23',
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appRed.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.delete),
+                        ),
+                      )
+                    ]),
+                    child: Container(
+                      height: 63,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 22,
+                              width: 22,
+                              decoration: BoxDecoration(
+                                  color: AppColor.veryLightGrey,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: Text(
+                                '4',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColor.lightGrey),
+                              )),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Batch ID#",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "FR-CHR-0464",
                                   style: CustomTextStyle.font16RM,
-                                  children: [
-                                    const WidgetSpan(
-                                        child: SizedBox(width: 10)),
-                                    TextSpan(
-                                        text: '04:54 PM',
-                                        style: CustomTextStyle.font14R
-                                            .copyWith(color: AppColor.grey)),
-                                  ]))
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowForward)
-                        ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Received date & time",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text.rich(TextSpan(
+                                    text: '13-03-23',
+                                    style: CustomTextStyle.font16RM,
+                                    children: [
+                                      const WidgetSpan(
+                                          child: SizedBox(width: 10)),
+                                      TextSpan(
+                                          text: '04:54 PM',
+                                          style: CustomTextStyle.font14R
+                                              .copyWith(color: AppColor.grey)),
+                                    ]))
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowForward)
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Get.toNamed(Routes.assignedDriver);
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
-                child: Slidable(
-                  endActionPane:
-                      ActionPane(motion: const StretchMotion(), children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appGreen.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.edit),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appRed.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.delete),
-                          )
-                        ],
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.assignedDriver);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+                  child: Slidable(
+                    endActionPane:
+                        ActionPane(motion: const StretchMotion(), children: [
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appGreen.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.edit),
+                        ),
                       ),
-                    )
-                  ]),
-                  child: Container(
-                    height: 63,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 22,
-                            width: 22,
-                            decoration: BoxDecoration(
-                                color: AppColor.veryLightGrey,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: Text(
-                              '5',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColor.lightGrey),
-                            )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Batch ID#",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "FR-CHR-0464",
-                                style: CustomTextStyle.font16RM,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Received date & time",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text.rich(TextSpan(
-                                  text: '13-03-23',
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appRed.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.delete),
+                        ),
+                      )
+                    ]),
+                    child: Container(
+                      height: 63,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 22,
+                              width: 22,
+                              decoration: BoxDecoration(
+                                  color: AppColor.veryLightGrey,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: Text(
+                                '5',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColor.lightGrey),
+                              )),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Batch ID#",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "FR-CHR-0464",
                                   style: CustomTextStyle.font16RM,
-                                  children: [
-                                    const WidgetSpan(
-                                        child: SizedBox(width: 10)),
-                                    TextSpan(
-                                        text: '04:54 PM',
-                                        style: CustomTextStyle.font14R
-                                            .copyWith(color: AppColor.grey)),
-                                  ]))
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowForward)
-                        ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Received date & time",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text.rich(TextSpan(
+                                    text: '13-03-23',
+                                    style: CustomTextStyle.font16RM,
+                                    children: [
+                                      const WidgetSpan(
+                                          child: SizedBox(width: 10)),
+                                      TextSpan(
+                                          text: '04:54 PM',
+                                          style: CustomTextStyle.font14R
+                                              .copyWith(color: AppColor.grey)),
+                                    ]))
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowForward)
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Get.toNamed(Routes.assignedDriver);
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
-                child: Slidable(
-                  endActionPane:
-                      ActionPane(motion: const StretchMotion(), children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appGreen.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.edit),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appRed.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.delete),
-                          )
-                        ],
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.assignedDriver);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+                  child: Slidable(
+                    endActionPane:
+                        ActionPane(motion: const StretchMotion(), children: [
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appGreen.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.edit),
+                        ),
                       ),
-                    )
-                  ]),
-                  child: Container(
-                    height: 63,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 22,
-                            width: 22,
-                            decoration: BoxDecoration(
-                                color: AppColor.veryLightGrey,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: Text(
-                              '6',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColor.lightGrey),
-                            )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Batch ID#",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "FR-CHR-0464",
-                                style: CustomTextStyle.font16RM,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Received date & time",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text.rich(TextSpan(
-                                  text: '13-03-23',
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appRed.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.delete),
+                        ),
+                      )
+                    ]),
+                    child: Container(
+                      height: 63,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 22,
+                              width: 22,
+                              decoration: BoxDecoration(
+                                  color: AppColor.veryLightGrey,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: Text(
+                                '6',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColor.lightGrey),
+                              )),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Batch ID#",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "FR-CHR-0464",
                                   style: CustomTextStyle.font16RM,
-                                  children: [
-                                    const WidgetSpan(
-                                        child: SizedBox(width: 10)),
-                                    TextSpan(
-                                        text: '04:54 PM',
-                                        style: CustomTextStyle.font14R
-                                            .copyWith(color: AppColor.grey)),
-                                  ]))
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowForward)
-                        ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Received date & time",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text.rich(TextSpan(
+                                    text: '13-03-23',
+                                    style: CustomTextStyle.font16RM,
+                                    children: [
+                                      const WidgetSpan(
+                                          child: SizedBox(width: 10)),
+                                      TextSpan(
+                                          text: '04:54 PM',
+                                          style: CustomTextStyle.font14R
+                                              .copyWith(color: AppColor.grey)),
+                                    ]))
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowForward)
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Get.toNamed(Routes.assignedDriver);
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
-                child: Slidable(
-                  endActionPane:
-                      ActionPane(motion: const StretchMotion(), children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appGreen.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.edit),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appRed.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.delete),
-                          )
-                        ],
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.assignedDriver);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+                  child: Slidable(
+                    endActionPane:
+                        ActionPane(motion: const StretchMotion(), children: [
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appGreen.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.edit),
+                        ),
                       ),
-                    )
-                  ]),
-                  child: Container(
-                    height: 63,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 22,
-                            width: 22,
-                            decoration: BoxDecoration(
-                                color: AppColor.veryLightGrey,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: Text(
-                              '7',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColor.lightGrey),
-                            )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Batch ID#",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "FR-CHR-0464",
-                                style: CustomTextStyle.font16RM,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Received date & time",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text.rich(TextSpan(
-                                  text: '13-03-23',
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appRed.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.delete),
+                        ),
+                      )
+                    ]),
+                    child: Container(
+                      height: 63,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 22,
+                              width: 22,
+                              decoration: BoxDecoration(
+                                  color: AppColor.veryLightGrey,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: Text(
+                                '7',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColor.lightGrey),
+                              )),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Batch ID#",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "FR-CHR-0464",
                                   style: CustomTextStyle.font16RM,
-                                  children: [
-                                    const WidgetSpan(
-                                        child: SizedBox(width: 10)),
-                                    TextSpan(
-                                        text: '04:54 PM',
-                                        style: CustomTextStyle.font14R
-                                            .copyWith(color: AppColor.grey)),
-                                  ]))
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowForward)
-                        ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Received date & time",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text.rich(TextSpan(
+                                    text: '13-03-23',
+                                    style: CustomTextStyle.font16RM,
+                                    children: [
+                                      const WidgetSpan(
+                                          child: SizedBox(width: 10)),
+                                      TextSpan(
+                                          text: '04:54 PM',
+                                          style: CustomTextStyle.font14R
+                                              .copyWith(color: AppColor.grey)),
+                                    ]))
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowForward)
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () {
-                Get.toNamed(Routes.assignedDriver);
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
-                child: Slidable(
-                  endActionPane:
-                      ActionPane(motion: const StretchMotion(), children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appGreen.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.edit),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 22,
-                            backgroundColor: AppColor.appRed.withOpacity(0.2),
-                            child: SvgPicture.asset(StaticAssets.delete),
-                          )
-                        ],
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.assignedDriver);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+                  child: Slidable(
+                    endActionPane:
+                        ActionPane(motion: const StretchMotion(), children: [
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appGreen.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.edit),
+                        ),
                       ),
-                    )
-                  ]),
-                  child: Container(
-                    height: 63,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 22,
-                            width: 22,
-                            decoration: BoxDecoration(
-                                color: AppColor.veryLightGrey,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: Text(
-                              '8',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColor.lightGrey),
-                            )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Batch ID#",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "FR-CHR-0464",
-                                style: CustomTextStyle.font16RM,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Received date & time",
-                                style: CustomTextStyle.font12R
-                                    .copyWith(color: AppColor.grey),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text.rich(TextSpan(
-                                  text: '13-03-23',
+                      Expanded(
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.appRed.withOpacity(0.2),
+                          child: SvgPicture.asset(StaticAssets.delete),
+                        ),
+                      )
+                    ]),
+                    child: Container(
+                      height: 63,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 22,
+                              width: 22,
+                              decoration: BoxDecoration(
+                                  color: AppColor.veryLightGrey,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: Text(
+                                '8',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColor.lightGrey),
+                              )),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Batch ID#",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "FR-CHR-0464",
                                   style: CustomTextStyle.font16RM,
-                                  children: [
-                                    const WidgetSpan(
-                                        child: SizedBox(width: 10)),
-                                    TextSpan(
-                                        text: '04:54 PM',
-                                        style: CustomTextStyle.font14R
-                                            .copyWith(color: AppColor.grey)),
-                                  ]))
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          SvgPicture.asset(StaticAssets.arrowForward)
-                        ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Received date & time",
+                                  style: CustomTextStyle.font12R
+                                      .copyWith(color: AppColor.grey),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text.rich(TextSpan(
+                                    text: '13-03-23',
+                                    style: CustomTextStyle.font16RM,
+                                    children: [
+                                      const WidgetSpan(
+                                          child: SizedBox(width: 10)),
+                                      TextSpan(
+                                          text: '04:54 PM',
+                                          style: CustomTextStyle.font14R
+                                              .copyWith(color: AppColor.grey)),
+                                    ]))
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(StaticAssets.arrowForward)
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 30,
+              )
+            ],
+          ),
         ));
   }
 }

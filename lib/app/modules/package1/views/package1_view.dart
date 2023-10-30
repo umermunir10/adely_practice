@@ -18,14 +18,14 @@ class Package1View extends GetView<Package1Controller> {
     return Scaffold(
         backgroundColor: AppColor.scaffolColor,
         appBar: PreferredSize(
-            preferredSize: const Size(double.infinity, 500),
+            preferredSize: const Size(double.infinity, 100),
             child: Stack(
                 clipBehavior: Clip.none,
                 alignment: Alignment.center,
                 children: [
                   Image.asset(
                     StaticAssets.appBarBg,
-                    width: 400,
+                    width: double.infinity,
                     height: 150,
                     fit: BoxFit.fitWidth,
                   ),
@@ -62,7 +62,7 @@ class Package1View extends GetView<Package1Controller> {
                 ])),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(11.0),
+            padding: const EdgeInsets.all(5.0),
             child: Column(
               children: [
                 Row(
@@ -77,7 +77,7 @@ class Package1View extends GetView<Package1Controller> {
                       textColor: Colors.white,
                     ),
                     const SizedBox(
-                      width: 10,
+                      width: 5,
                     ),
                     const CustomButton(
                       buttonName: 'Download Shipping Label',

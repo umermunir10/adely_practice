@@ -6,9 +6,7 @@ import 'package:adely_dispatcher/app/data/widgets/custom_text_feild.dart';
 import 'package:adely_dispatcher/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/edit_profile_controller.dart';
 
 class EditProfileView extends GetView<EditProfileController> {
@@ -45,7 +43,7 @@ class EditProfileView extends GetView<EditProfileController> {
                       ),
                     ),
                     const SizedBox(
-                      width: 85,
+                      width: 80,
                     ),
                     const Text(
                       'Edit Profile',

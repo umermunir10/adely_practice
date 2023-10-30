@@ -20,13 +20,12 @@ class AssigendDriverRow2 extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10),
         child: Slidable(
           endActionPane: ActionPane(motion: const StretchMotion(), children: [
-            const SizedBox(
-              width: 15,
-            ),
-            CircleAvatar(
-              radius: 25,
-              backgroundColor: AppColor.appRed.withOpacity(0.2),
-              child: SvgPicture.asset(StaticAssets.delete),
+            Expanded(
+              child: CircleAvatar(
+                radius: 25,
+                backgroundColor: AppColor.appRed.withOpacity(0.2),
+                child: SvgPicture.asset(StaticAssets.delete),
+              ),
             )
           ]),
           child: Container(

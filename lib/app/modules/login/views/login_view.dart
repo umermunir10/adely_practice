@@ -9,16 +9,13 @@ import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
-  final bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const SizedBox(
-          width: double.infinity,
-        ),
         const SizedBox(
           height: 100,
         ),
@@ -33,9 +30,6 @@ class LoginView extends GetView<LoginController> {
           ],
         ),
         const SizedBox(
-          height: 50,
-        ),
-        const SizedBox(
           width: 250,
           child: Text(
             'Welcome to Adely Dispatcher App',
@@ -43,44 +37,42 @@ class LoginView extends GetView<LoginController> {
             textAlign: TextAlign.center,
           ),
         ),
-        const SizedBox(
-          height: 10,
-        ),
         const Text(
           'Login to your Account',
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 18, color: Colors.grey),
         ),
-        const SizedBox(
-          height: 61,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: CustomTextField(
-            prefixIcon: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: SvgPicture.asset(
-                StaticAssets.mail,
+        Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: CustomTextField(
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: SvgPicture.asset(
+                    StaticAssets.mail,
+                  ),
+                ),
+                name: '',
+                hint: 'Enter your email',
+                textInputType: TextInputType.emailAddress,
               ),
             ),
-            name: '',
-            hint: 'Enter your email',
-            textInputType: TextInputType.emailAddress,
-          ),
-        ),
-        const SizedBox(
-          height: 15,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: CustomTextField(
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: SvgPicture.asset(StaticAssets.lock),
-              ),
-              name: '',
-              hint: 'Your Password',
-              textInputType: TextInputType.visiblePassword),
+            const SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: CustomTextField(
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: SvgPicture.asset(StaticAssets.lock),
+                  ),
+                  name: '',
+                  hint: 'Your Password',
+                  textInputType: TextInputType.visiblePassword),
+            ),
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(left: 12, right: 20),
@@ -89,12 +81,13 @@ class LoginView extends GetView<LoginController> {
             children: [
               Row(
                 children: [
-                  Checkbox(
-                    value: isChecked,
-                    onChanged: (_) {},
-                    activeColor: Colors.grey,
-                    checkColor: Colors.grey,
-                  ),
+                  Obx(() => Checkbox(
+                        value: controller.isChecked.value,
+                        onChanged: (value) {
+                          controller.isChecked.value = value!;
+                        },
+                        activeColor: Colors.black,
+                      )),
                   const Text('Remember me'),
                 ],
               ),
@@ -104,9 +97,6 @@ class LoginView extends GetView<LoginController> {
               )
             ],
           ),
-        ),
-        const SizedBox(
-          height: 67,
         ),
         Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
@@ -119,12 +109,9 @@ class LoginView extends GetView<LoginController> {
                   type: ButtonVariant.filled,
                   onPressed: () => Get.offNamed(Routes.bottomNavigation),
                 ))),
-        const SizedBox(
-          height: 63,
-        ),
         Image.asset(
           StaticAssets.bottomSplash,
-          width: 390,
+          width: double.infinity,
           fit: BoxFit.fitWidth,
         )
       ],

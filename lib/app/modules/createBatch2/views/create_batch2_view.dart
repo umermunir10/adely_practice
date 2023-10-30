@@ -18,14 +18,14 @@ class CreateBatch2View extends GetView<CreateBatch2Controller> {
     return Scaffold(
       backgroundColor: AppColor.scaffolColor,
       appBar: PreferredSize(
-          preferredSize: const Size(double.infinity, 500),
+          preferredSize: const Size(double.infinity, 100),
           child: Stack(
               clipBehavior: Clip.none,
               alignment: Alignment.center,
               children: [
                 Image.asset(
                   StaticAssets.appBarBg,
-                  width: 400,
+                  width: double.infinity,
                   height: 150,
                   fit: BoxFit.fitWidth,
                 ),

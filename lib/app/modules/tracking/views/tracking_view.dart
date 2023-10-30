@@ -41,21 +41,19 @@ class TrackingView extends GetView<TrackingController> {
           ),
         ),
         appBar: PreferredSize(
-          preferredSize: const Size(double.infinity, 500),
+          preferredSize: const Size(double.infinity, 130),
           child: Stack(
               clipBehavior: Clip.none,
               alignment: Alignment.center,
               children: [
                 Image.asset(
                   StaticAssets.appBarBg,
-                  width: 400,
+                  width: double.infinity,
                   height: 193,
                   fit: BoxFit.fitWidth,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                  ),
+                  padding: const EdgeInsets.only(left: 20, bottom: 40),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -79,7 +77,9 @@ class TrackingView extends GetView<TrackingController> {
                             fontSize: 22),
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(right: 10),
+                        padding: EdgeInsets.only(
+                          right: 10,
+                        ),
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
                         ),
@@ -88,7 +88,7 @@ class TrackingView extends GetView<TrackingController> {
                   ),
                 ),
                 Container(
-                    margin: const EdgeInsets.only(top: 120),
+                    margin: const EdgeInsets.only(top: 80),
                     child: const Padding(
                       padding: EdgeInsets.only(left: 15, right: 15),
                       child: CustomTextField(
@@ -118,7 +118,7 @@ class TrackingView extends GetView<TrackingController> {
                     width: 165,
                   ),
                   const SizedBox(
-                    width: 20,
+                    width: 15,
                   ),
                   CustomButton(
                     buttonName: 'Batches to Dispatch',

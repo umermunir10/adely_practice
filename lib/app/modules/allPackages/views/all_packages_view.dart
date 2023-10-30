@@ -16,19 +16,19 @@ class AllPackagesView extends GetView<AllPackagesController> {
     return Scaffold(
       backgroundColor: AppColor.scaffolColor,
       appBar: PreferredSize(
-        preferredSize: const Size(double.infinity, 500),
+        preferredSize: const Size(double.infinity, 130),
         child: Stack(
           clipBehavior: Clip.none,
           alignment: Alignment.center,
           children: [
             Image.asset(
               StaticAssets.appBarBg,
-              width: 400,
+              width: double.infinity,
               height: 193,
               fit: BoxFit.fitWidth,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 20, bottom: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -58,7 +58,7 @@ class AllPackagesView extends GetView<AllPackagesController> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(top: 120),
+              margin: const EdgeInsets.only(top: 90),
               child: const Padding(
                 padding: EdgeInsets.only(left: 15, right: 15),
                 child: CustomTextField(

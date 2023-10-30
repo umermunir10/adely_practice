@@ -21,7 +21,7 @@ class IDList extends StatelessWidget {
         height: 70,
         width: double.infinity,
         child: Padding(
-          padding: const EdgeInsets.only(left: 15, right: 15),
+          padding: const EdgeInsets.only(left: 15),
           child: Row(
             children: [
               Container(
@@ -34,25 +34,20 @@ class IDList extends StatelessWidget {
               const SizedBox(
                 width: 15,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: 220,
-                    child: Text(
-                      id ?? '1094241',
-                      style: CustomTextStyle.font16RM,
-                    ),
-                  ),
-                  Radio(
-                      value: id,
-                      groupValue: selectedValue,
-                      activeColor: AppColor.primaryColor,
-                      onChanged: (value) {
-                        onChange(value!);
-                      })
-                ],
-              )
+              SizedBox(
+                width: 223,
+                child: Text(
+                  id ?? '1094241',
+                  style: CustomTextStyle.font16RM,
+                ),
+              ),
+              Radio(
+                  value: id,
+                  groupValue: selectedValue,
+                  activeColor: AppColor.primaryColor,
+                  onChanged: (value) {
+                    onChange(value!);
+                  })
             ],
           ),
         ),

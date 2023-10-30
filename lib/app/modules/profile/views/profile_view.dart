@@ -13,19 +13,19 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size(double.infinity, 500),
+        preferredSize: const Size(double.infinity, 130),
         child: Stack(
             clipBehavior: Clip.none,
             alignment: Alignment.center,
             children: [
               Image.asset(
                 StaticAssets.appBarBg,
-                width: 400,
+                width: double.infinity,
                 height: 193,
                 fit: BoxFit.fitWidth,
               ),
               const Padding(
-                padding: EdgeInsets.only(left: 20),
+                padding: EdgeInsets.only(left: 20, bottom: 40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

@@ -24,7 +24,9 @@ class driverList extends GetView<CreateBatch3Controller> {
         height: 70,
         width: double.infinity,
         child: Padding(
-          padding: const EdgeInsets.only(left: 15, right: 15),
+          padding: const EdgeInsets.only(
+            left: 15,
+          ),
           child: Row(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,25 +37,20 @@ class driverList extends GetView<CreateBatch3Controller> {
               const SizedBox(
                 width: 15,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: 230,
-                    child: Text(
-                      name ?? 'Amir Mehmood',
-                      style: CustomTextStyle.font16RM,
-                    ),
-                  ),
-                  Radio(
-                      value: name,
-                      groupValue: selectedValue,
-                      activeColor: AppColor.primaryColor,
-                      onChanged: (value) {
-                        onChange(value!);
-                      })
-                ],
-              )
+              SizedBox(
+                width: 225,
+                child: Text(
+                  name ?? 'Amir Mehmood',
+                  style: CustomTextStyle.font16RM,
+                ),
+              ),
+              Radio(
+                  value: name,
+                  groupValue: selectedValue,
+                  activeColor: AppColor.primaryColor,
+                  onChanged: (value) {
+                    onChange(value!);
+                  })
             ],
           ),
         ),

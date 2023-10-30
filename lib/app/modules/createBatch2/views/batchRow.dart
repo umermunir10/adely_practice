@@ -49,16 +49,16 @@ class batchRow extends GetView<CreateBatch2Controller> {
                 ),
                 const SizedBox(
                   height: 40,
-                  width: 227,
+                  width: 222,
                   child: Text(
                       'Location: 1R Building, Mini Market, Gullberg II, Lahore.',
                       style: TextStyle(color: Colors.grey, fontSize: 12)),
                 ),
               ],
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            // const SizedBox(
+            //   width: ,
+            // ),
             Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: Obx(

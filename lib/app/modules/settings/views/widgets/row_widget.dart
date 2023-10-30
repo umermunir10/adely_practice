@@ -1,5 +1,5 @@
 import 'package:adely_dispatcher/app/data/utils/static_assets.dart';
-import 'package:adely_dispatcher/app/modules/login/views/login_view.dart';
+import 'package:adely_dispatcher/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -14,7 +14,7 @@ class SettingsRowWidget extends StatelessWidget {
       padding: const EdgeInsets.only(top: 30, left: 22),
       child: InkWell(
         onTap: () {
-          Get.to(const LoginView());
+          Get.toNamed(Routes.login);
         },
         child: Row(
           children: [
